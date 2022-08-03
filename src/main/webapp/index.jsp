@@ -44,6 +44,6 @@
     <h2>Registrando Livros</h2>
 </header>
     <a href="registro-livro.jsp" class="button button1">Registrar um novo livro</a>
-    <a href="sucesso-registro-livro.jsp" class="button button2">Verificar lista de livros registrados</a>
+    <a href="livro-servlet" class="button button2">Verificar lista de livros registrados</a>
 </body>
 </html>

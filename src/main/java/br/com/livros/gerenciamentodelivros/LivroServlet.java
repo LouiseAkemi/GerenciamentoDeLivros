@@ -33,12 +33,19 @@ public class LivroServlet extends HttpServlet {
         Livros livroSalvo = livrosBusinessObject.save(livro);
         request.setAttribute("livroSalvo",livroSalvo);
 
+        doGet(request, response);
+
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         List<Livros> livrosList = livrosBusinessObject.findAll();
-        request.setAttribute("livrosLista",livrosList);
+        req.setAttribute("livrosLista",livrosList);
         livrosList.forEach(System.out::println);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso-registro-livro.jsp");
-        dispatcher.forward(request,response);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("sucesso-registro-livro.jsp");
+        dispatcher.forward(req,resp);
 
     }
 

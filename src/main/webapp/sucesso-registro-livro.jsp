@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: User
@@ -90,11 +89,13 @@
     </style>
 </head>
 <body>
-<header>
-    <h3>Último Livro Registrado</h3>
-    <h5>Titulo: ${livroSalvo.titulo}</h5>
-    <h5>Autor: ${livroSalvo.autor}</h5>
-</header>
+<c:if test="${livroSalvo != null}">
+    <header>
+        <h3>Último Livro Registrado</h3>
+        <h5>Titulo: ${livroSalvo.titulo}</h5>
+        <h5>Autor: ${livroSalvo.autor}</h5>
+    </header>
+</c:if>
     <nav>
         <h1>Lista de Livros Registrados</h1>
         <table class="content-table">
